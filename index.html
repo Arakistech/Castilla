@@ -614,14 +614,17 @@ map.on('load', () => {
     map.on('mouseenter', 'defibrilators', handleMouseEnter);
     
      map.on('mouseenter', 'defibrilators', (e) => {
-         // Change the cursor style as a UI indicator.
-         map.getCanvas().style.cursor = 'pointer';
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
         
-         // Copy coordinates array.
-         const coordinates = e.features[0].geometry.coordinates.slice();
-         const description = `<strong>${e.features[0].properties.Organismo}</strong>
-             <p>${e.features[0].properties.Modelo}</p> 
-             <p>Horario: ${e.features[0].properties.Horario}h</p>`;
+        // Copy coordinates array.
+        let feature = e.features[0];
+        // console.log(feature);
+
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const description = `<strong>${e.features[0].properties.nombre}</strong>
+             <p>${e.features[0].properties.operador}</p> 
+             <p>Tipo: ${e.features[0].properties.tipo}h</p>`;
 
          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
@@ -645,7 +648,7 @@ map.on('load', () => {
     function handleMouseEnter(e) {
         map.getCanvas().style.cursor = 'pointer';
         
-        console.log(e.features[0]);
+        // console.log(e.features[0]);
         
         // Copy coordinates array.
         const coordinates = e.features[0].geometry.coordinates.slice();
@@ -1018,9 +1021,16 @@ function addDefibrilators() {
         map.addImage('defibrilators', image);
     });
 
+    map.loadImage('assets/images/Electricar.png', (error, image) => {
+        if (error) throw error;
+        // Add the loaded image to the style's sprite with the ID 'kitten'.
+        map.addImage('electricar', image);
+    });
+
     map.addSource('defibrilators', {
         type:'geojson',
-        data:'Ubicaciones_Desfibriladores_LatLong.json'
+        // data:'Ubicaciones_Desfibriladores_LatLong.json',
+        data:'puntos-de-recarga-del-vehiculo-electrico.json'
     });
 
     map.addLayer({
@@ -1029,8 +1039,8 @@ function addDefibrilators() {
         type:'symbol',
         paint:{},
         layout:{
-            'icon-image':'defibrilators',
-            'icon-size':0.3,
+            'icon-image':'electricar',
+            'icon-size':0.1,
             'visibility':'none'
         }
     });
