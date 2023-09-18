@@ -11,7 +11,7 @@ const config = {
   zoom: 17,
   pitch:57,
   bearing:60,
-  title: 'Guiness Map',
+  title: 'Centro Logístico',
   description:
     ' You can filter the list by business type.',
   sideBarInfo: ['Location Name', 'Detail', 'Location Type'],
