@@ -582,7 +582,7 @@ map.on('load', () => {
     }
   );
 
-  var origin = [-5.685367609234522, 41.13072147967735, 0];
+  var origin = [-5.68772, 41.12401, 0];
 
   map.addLayer({
     id: 'custom_layer',
