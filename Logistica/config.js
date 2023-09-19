@@ -7,7 +7,7 @@ const config = {
     'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2xpYThhaTgxMDE0OTNsbzlydGs1MjNkYiJ9.8iGzdM2OVnC3NKpVatVGqA',
   CSV: './Wayfinding Locations_AM_20230913.csv',
   glbFile:'./src/factory.glb',
-  center: [-6.289912423398846, 53.34437252133219],
+  center: [-5.685367609234522, 41.13072147967735],
   zoom: 17,
   pitch:57,
   bearing:60,
