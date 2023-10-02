@@ -461,7 +461,7 @@
     });
         
             
-let videoMarkers, showMarkers=true, showDefibrilators=true;    
+let videoMarkers, showMarkers=true, showDefibrilators=false;    
 map.on('load', () => {		
     map.addSource('places', {
     'type': 'geojson',
@@ -859,7 +859,7 @@ function resetRoute() {
                 title: 'Desfibriladores',
                 eventHandler() {
                     showDefibrilators = !showDefibrilators;
-                    let visibilityStatus = showDefibrilators ? 'visible' : 'none';
+                    let visibilityStatus = showDefibrilators ? 'none' : 'visible';
 
                     map.setLayoutProperty('defibrilators', 'visibility', visibilityStatus);
                 }
