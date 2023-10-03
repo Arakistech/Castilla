@@ -461,7 +461,7 @@
     });
         
             
-let videoMarkers, showMarkers=true, showDefibrilators=false;    
+let videoMarkers, showMarkers=true, showDefibrilators=true;    
 map.on('load', () => {		
     map.addSource('places', {
     'type': 'geojson',
@@ -1041,7 +1041,7 @@ function addDefibrilators() {
         layout:{
             'icon-image':'electricar',
             'icon-size':0.1,
-            'visibility':'none'
+            'visibility':'visible'
         }
     });
 }
