@@ -8,9 +8,9 @@ const config = {
   CSV: './Wayfinding Locations_AM_20230913.csv',
   glbFile:'./src/factory.glb',
   center: [-5.68772, 41.12401],
-  zoom: 17,
+  zoom: 19,
   pitch:57,
-  bearing:60,
+  bearing:80,
   title: 'Centro Logístico',
   description:
     ' You can filter the list by business type.',
